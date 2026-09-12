@@ -1,0 +1,26 @@
+# Goal - To say  hello and print title/repository name 
+
+# Start with workflows name
+name: hello
+
+# When workflows should run 
+on:
+ push:
+   
+# what workflow does
+jobs:
+ # Declare jobs name
+  greet:
+    runs-on: ubuntu-latest       #jobs run on which container
+    steps:
+      - name: say hello
+        run: echo "hello dosto"
+
+  repositor_name:
+    needs: greet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display repository name
+        run: ehco "repository name is ${{github.event.repository.name}}"
+    
+  
