@@ -4,6 +4,7 @@ name: CICD Demo
 on:
   push:
 
+# CI
 jobs:
   code:
     run-on: ubuntu-latest
@@ -24,7 +25,8 @@ jobs:
      steps:
       - name: test the application
         run: echo "test passed"
-  
+
+ # CD
   deploy:
      needs: [code, build, test]
      run-on: ubuntu-latest
