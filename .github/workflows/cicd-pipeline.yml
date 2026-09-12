@@ -7,21 +7,21 @@ on:
 # CI
 jobs:
   code:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: clone the code
         run: echo "code cloned"
 
   build:
      needs: code
-     run-on: ubuntu-latest
+     runs-on: ubuntu-latest
      steps:
        - name: build the code
          run: echo "code built"
   
   test:
-     run-on: ubuntu-latest
      needs: build
+     runs-on: ubuntu-latest
      steps:
       - name: test the application
         run: echo "test passed"
@@ -29,7 +29,7 @@ jobs:
  # CD
   deploy:
      needs: [code, build, test]
-     run-on: ubuntu-latest
+     runs-on: ubuntu-latest
      steps:
        - name: deploy the app on server
          run: echo "application deployed"
