@@ -21,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display repository name
-        run: ehco "repository name is ${{github.event.repository.name}}"
+        run: echo "repository name is ${{github.event.repository.name}}"
     
   
