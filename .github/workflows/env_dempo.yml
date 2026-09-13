@@ -1,0 +1,14 @@
+name: show enviroment variables
+
+on:
+  workflow_dispatch:         # used for manaul triggerted
+
+env:
+  name: Amit
+jobs:
+  env_usability:
+       runs-on: ubuntu-latest
+       steps:
+         - name: show plain text environment
+           run: echo "environement variable for plain text is ${{env.name}}" 
+  
