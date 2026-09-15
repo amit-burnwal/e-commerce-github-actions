@@ -1,7 +1,7 @@
-name: show enviroment variables
+name: show environment variables
 
 on:
-  workflow_dispatch:         # used for manaul triggerted
+  workflow_dispatch:         # used for manual trigger
 
 env:
   name: Amit
@@ -10,7 +10,7 @@ jobs:
        runs-on: ubuntu-latest
        steps:
          - name: show plain text environment
-           run: echo "environement variable for plain text is ${{env.name}}" 
+           run: echo "environment variable for plain text is ${{env.name}}" 
   
          - name: show secrets env
-           run:  echo "display my secrets as secrtes ${{secrets.amit.secrets}}"
+           run:  echo "display my secrets as secrets ${{secrets.amit.secrets}}"
