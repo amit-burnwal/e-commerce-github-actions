@@ -11,5 +11,8 @@ jobs:
        steps:
          - name: show plain text environment
            run: echo "environment variable for plain text is - ${{env.name}}" 
+           
+         - name: show secrets variable as hidden *
+           run: echo "display for secrets text ${{secrets.AMIT_SECRETS}}"
   
   
