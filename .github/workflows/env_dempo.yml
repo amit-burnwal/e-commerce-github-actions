@@ -14,5 +14,9 @@ jobs:
            
          - name: show secrets variable as hidden *
            run: echo "display for secrets text ${{secrets.AMIT_SECRETS}}"
+
+         - name: show my docker username
+           run: echo "show my docker username - ${{vars.DOCKERHUB_USERNAME}}"
+            
   
   
