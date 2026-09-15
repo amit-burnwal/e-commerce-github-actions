@@ -10,7 +10,7 @@ jobs:
        runs-on: ubuntu-latest
        steps:
          - name: show plain text environment
-           run: echo "environment variable for plain text is ${{env.name}}" 
+           run: echo "environment variable for plain text is: ${{env.name}}" 
   
          - name: show secrets env
-           run:  echo "display my secrets as secrets ${{secrets.amit.secrets}}"
+           run:  echo "display my secrets as secrets is: ${{secrets.AMIT_SECRETS}}"
