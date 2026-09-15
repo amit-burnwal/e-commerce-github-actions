@@ -11,9 +11,7 @@ on:
         options:
           - DEV
           - STAG
-          - PROD
-    
-        
+          - PROD        
 
 env:
   name: Sia Boss    #key: value
@@ -29,6 +27,9 @@ jobs:
 
          - name: show my docker username
            run: echo "show my docker username - ${{vars.DOCKERHUB_USERNAME}}"
+
+         -  name: show the environment you have selected
+            run: echo "environment is ${{inputs.environment}}"
           
             
   
