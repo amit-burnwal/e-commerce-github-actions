@@ -1,10 +1,10 @@
-name: show environment variables
+name: Show environment variables
 
 on:
   workflow_dispatch:         # used for manual trigger
 
 env:
-  name: Amit
+  name: Sia Boss    #key: value
 jobs:
   env_usability:
        runs-on: ubuntu-latest
@@ -12,5 +12,4 @@ jobs:
          - name: show plain text environment
            run: echo "environment variable for plain text is: ${{env.name}}" 
   
-         - name: show secrets env
-           run:  echo "display my secrets as secrets is: ${{secrets.AMIT_SECRETS}}"
+  
