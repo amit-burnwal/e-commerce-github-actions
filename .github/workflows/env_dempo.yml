@@ -10,6 +10,6 @@ jobs:
        runs-on: ubuntu-latest
        steps:
          - name: show plain text environment
-           run: echo "environment variable for plain text is: ${{env.name}}" 
+           run: echo "environment variable for plain text is - ${{env.name}}" 
   
   
