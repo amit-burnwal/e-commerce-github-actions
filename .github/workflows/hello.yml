@@ -6,6 +6,8 @@ name: hello
 # When workflows should run 
 on:
  push:
+  paths-ignore:
+    - readme.md                # Skips the workflow if ONLY markdown files changed
    
 # what workflow does
 jobs:
