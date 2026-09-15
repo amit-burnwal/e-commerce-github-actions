@@ -2,6 +2,18 @@ name: Show environment variables
 
 on:
   workflow_dispatch:         # used for manual trigger
+    inputs:
+      environment:
+        description: Select the target environment
+        required: false
+        default: 'DEV'
+        type: choice
+        options:
+          - DEV
+          - STAG
+          - PROD
+    
+        
 
 env:
   name: Sia Boss    #key: value
@@ -17,6 +29,7 @@ jobs:
 
          - name: show my docker username
            run: echo "show my docker username - ${{vars.DOCKERHUB_USERNAME}}"
+          
             
   
   
