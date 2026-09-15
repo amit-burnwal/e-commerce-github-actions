@@ -7,7 +7,7 @@ name: hello
 on:
  push:
   paths-ignore:
-    - readme.md                # Skips the workflow if ONLY markdown files changed
+    - 'readme.md'                # Skips the workflow if ONLY markdown files changed
    
 # what workflow does
 jobs:
