@@ -1,8 +1,12 @@
 # Goal: To Build CI/CD pipeline (just dummy)
 
 name: CICD Demo
-on:
-  push:
+
+
+#on:
+ # push:
+
+  workflow_dispatch:
 
 # CI
 jobs:

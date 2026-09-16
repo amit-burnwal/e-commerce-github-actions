@@ -4,11 +4,13 @@
 name: hello
 
 # When workflows should run 
-on:
- push:
-   paths-ignore: 
-    - 'readme.md'               
+#on:
+ #push:
+  # paths-ignore: 
+   # - 'readme.md'               
    
+    workflow_dispath:
+      
 # what workflow does
 jobs:
  # Declare jobs name
