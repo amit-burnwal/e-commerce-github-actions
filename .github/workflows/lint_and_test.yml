@@ -3,7 +3,7 @@
 name: Code Lint
 
 on:
-    workflow_call:
+    push:
 
 jobs:
     
