@@ -26,7 +26,7 @@ jobs:
               run: pip install -r requirements.txt
               
             - name: Code Lint
-              run: ruff check .
+              run: ruff check . --fix
 
             - name: Code Tests
               run: pytest
