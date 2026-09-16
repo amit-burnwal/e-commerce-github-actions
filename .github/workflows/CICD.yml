@@ -1,40 +1,38 @@
-# Goal: To Build CI/CD pipeline (just dummy)
-
+# Goal: To build a CI/CD pipeline (just dummy)
 name: CICD Demo
 
+on:
+  # push:
+  #   paths-ignore:
+  #     - 'README.md'
+  workflow_dispatch:
 
-#on:
- # push:
-
- on:
-  workflow_dispatch: 
-
-# CI
 jobs:
+  # CI
   code:
     runs-on: ubuntu-latest
     steps:
-      - name: clone the code
+      - name: Clone the code
         uses: actions/checkout@v7
-
+        
   build:
-     needs: code
-     runs-on: ubuntu-latest
-     steps:
-       - name: build the code
-         uses: docker/setup-buildx-action@v3
-  
+    needs: code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build the code with Docker
+        uses: docker/setup-buildx-action@v3
+        
   test:
-     needs: build
-     runs-on: ubuntu-latest
-     steps:
-      - name: test the application
-        run: echo "test passed"
-
- # CD
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the Application
+        run: echo "Test passed"
+  
+  # CD  
   deploy:
-     needs: [code, build, test]
-     runs-on: ubuntu-latest
-     steps:
-       - name: deploy the app on server
-         run: echo "application deployed"
+    needs: [code,build,test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the app on Server
+        run: echo "Application Deployed"
