@@ -11,17 +11,17 @@ jobs:
         python-version: ['3.12','3.13','3.14']
 
     steps:
-    # fetch the repository
+   
       - name: check out repo
         uses: actions/checkout@v7
 
-    # setup the python 
+   
       - name: setup python
         uses: actions/setup-python@v7
         with:
           python-version: ${{matrix.python-version}}
 
-    # install dependency 
+   
       - name: install dependencies
         uses: pip install -r requirements.txt
 
