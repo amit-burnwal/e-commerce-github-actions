@@ -1,7 +1,6 @@
 name: code lint
-
 on:
-   push:
+   workflow_call:
 
 jobs:
   code-linter-and-test:
