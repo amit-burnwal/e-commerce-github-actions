@@ -1,31 +1,32 @@
-# Goal - To say  hello and print title/repository name 
+# Goal: To say Hello and tell the title / Name of repository
 
-# Start with workflows name
-name: hello
+# Start with naming your workflow
+name: Hello
 
-# When workflows should run 
-#on:
- #push:
-  # paths-ignore: 
-   # - 'readme.md'               
-   
-   on:
-  workflow_dispatch: 
-      
-# what workflow does
+# when the workflow runs
+on:
+  # push:
+  #   paths-ignore:
+  #     - 'README.md'
+  workflow_dispatch:
+
+# what the workflow does
 jobs:
- # Declare jobs name
+  # name of your Jobs
   greet:
-    runs-on: ubuntu-latest       #jobs run on which container
+    # where the job runs (OS)
+    runs-on: ubuntu-latest
+    # the sequence of steps the job does
     steps:
-      - name: say hello
-        run: echo "hello dosto"
+      - name: Say hello
+        run: echo "Hello Dosto"
 
-  repositor_name:
+      - name: welcome
+        run: echo "Welcome Dosto"
+
+  repo-name:
     needs: greet
     runs-on: ubuntu-latest
     steps:
-      - name: Display repository name
-        run: echo "repository name is ${{github.event.repository.name}}"
-    
-  
+      - name: Show Repository Name
+        run: echo "The Repo Name is ${{ github.event.repository.name }}"
