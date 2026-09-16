@@ -9,7 +9,8 @@ name: hello
   # paths-ignore: 
    # - 'readme.md'               
    
-    workflow_dispath:
+   on:
+  workflow_dispatch: 
       
 # what workflow does
 jobs:

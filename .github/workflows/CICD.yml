@@ -6,7 +6,8 @@ name: CICD Demo
 #on:
  # push:
 
-  workflow_dispatch:
+ on:
+  workflow_dispatch: 
 
 # CI
 jobs:
