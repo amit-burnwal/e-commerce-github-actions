@@ -8,9 +8,9 @@ on:
 jobs:
     
     code-linter-and-test:
-        #strategy:
-         # matrix:
-          #  python-versions: ['3.12','3.13','3.14']
+        strategy:
+          matrix:
+            python-versions: ['3.12','3.13','3.14']
 
         runs-on: ubuntu-latest
         steps:
@@ -20,7 +20,8 @@ jobs:
             - name: Setup Python
               uses: actions/setup-python@v7
               with:
-                python-version: 3.14
+                #python-version: 3.14
+                python-version: ${{matrix.python-versions}}
 
             - name: Install Dependencies
               run: pip install -r requirements.txt
