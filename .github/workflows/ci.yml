@@ -1,0 +1,18 @@
+# Goal - To run the continuous integration(CI), which means run the workflow in proper order
+
+name: CI
+on: 
+   push:
+
+jobs:
+   # code lint - to call code lint workflow 
+   code_lint:
+      uses: ./.github/workflows/lint_and_test.yml   # uses only used for do action but also used to call the workflow
+      
+   
+   build_and_push:
+       needs: code_lint  # code_lint worflows task will complete than this workflows will run
+       secrets: inherit  # this will use for inherit password for login here docker login token require
+       uses: ./.github/workflows/docker.yml
+
+
