@@ -7,8 +7,8 @@ on:
 
 jobs:
     build_and_push:
-        runs-on: ubuntu-latest  #github hosted
-        # runs-on: self-hosted
+        #runs-on: ubuntu-latest  #github hosted
+        runs-on: self-hosted
         steps:
           - name: code checkout            # code checkout because want to use Dockerfile to pull docker image and  to build the docker image
             uses: actions/checkout@v7
@@ -31,4 +31,4 @@ jobs:
             with:
               push: true  # when we have to only build than make push: false and for build and push keep push: true
               tags: "${{ vars.DOCKERHUB_USERNAME }}/e-commerce-python:latest"  # this is steps used for tagged docker image
-              
+              load: true   
