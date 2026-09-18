@@ -1,0 +1,24 @@
+# Goal - To build and push the docker images
+
+name: Docker build and push
+
+on:
+    push:
+
+jobs:
+    build_and_push:
+        runs-on: ubuntu-latest
+        steps:
+          - name: code checkout            # code checkout because want to use Dockerfile to pull docker image and  to build the docker image
+            uses: actions/checkout@v7
+
+          - name: Docker setup         # docker setup because need to setup docker in ubuntu
+            uses: docker/setup-docker-action@v5
+
+          - name: Docker login    # to push the docker image to docker hub 
+            uses: docker/login-action@v3
+            with:
+              username: ${{ vars.DOCKERHUB_USERNAME }}
+              password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+            
