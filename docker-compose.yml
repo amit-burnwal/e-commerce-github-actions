@@ -1,0 +1,5 @@
+services:
+  app:
+    image: ramnir/e-commerce-python:latest
+    ports:
+      - "80:80"
