@@ -8,7 +8,7 @@ on:
 jobs:
     # Secrets Scan - This has to be done before code linting and test -> shift left
     secret-scan:
-        uses: ./.github/workflows/secrets-scanning.yml
+        uses: ./.github/workflows/secrets.scanning.yml
         secrets: inherit
 
     # Code
