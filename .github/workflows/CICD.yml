@@ -2,7 +2,7 @@
 
 name: CI
 on: 
-   push:
+    workflow_dispatch:      # as we have to create new pipeline for DevSecops so change from push to workflow_dispatch
 
 jobs:
    # code lint - to call code lint workflow 
