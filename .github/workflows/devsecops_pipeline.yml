@@ -33,4 +33,8 @@ jobs:
         needs: dependency-scan  # this needs 1st scan dependency other wise possibilities of getting corrupted image
         uses: ./.github/workflows/trivy_scans.yml
 
-    
+      # Push to Docker HUb
+    docker-push:
+        secrets: inherit
+        needs: build-and-scan
+        uses: ./.github/workflows/docker_push.yml
