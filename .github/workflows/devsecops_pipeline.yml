@@ -38,3 +38,11 @@ jobs:
         secrets: inherit
         needs: build-and-scan
         uses: ./.github/workflows/docker_push.yml
+
+     # Deploy
+    deploy:
+        secrets: inherit
+        needs: [docker-push]
+        uses: ./.github/workflows/cd.yml
+
+  
