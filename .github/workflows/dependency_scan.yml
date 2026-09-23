@@ -23,7 +23,7 @@ jobs:
         - name: Dependency Scan for Pip    # this is used for only python project
           uses: pypa/gh-action-pip-audit@v1.1.0
 
-         - name: Depcheck                # this is OWASP used for any project(may in python or java or node)
+        - name: Depcheck                # this is OWASP used for any project(may in python or java or node)
           uses: dependency-check/Dependency-Check_Action@main
           id: Depcheck
           with:
