@@ -26,3 +26,5 @@ jobs:
     dependency-scan:
         needs: sast
         uses: ./.github/workflows/dependency_scan.yml
+
+    
