@@ -28,9 +28,9 @@ jobs:
         uses: ./.github/workflows/dependency_scan.yml
 
       # Build & Scan
-    build-and-scan:
+    build-and-scan:      # In trivy_scan.yml its mentioned 1st build than scan using trivy
         secrets: inherit
-        needs: dependency-scan
+        needs: dependency-scan  # this needs 1st scan dependency other wise possibilities of getting corrupted image
         uses: ./.github/workflows/trivy_scans.yml
 
     

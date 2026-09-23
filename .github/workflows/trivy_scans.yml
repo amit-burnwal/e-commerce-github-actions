@@ -36,7 +36,9 @@ jobs:
               with:
                 image-ref: "${{ vars.DOCKERHUB_USERNAME }}/e-commerce-python:latest"
                 format: 'table'
-                exit-code: '1'
-                ignore-unfixed: true
+                exit-code: '1'  # exit if any critical error
+                ignore-unfixed: false
                 vuln-type: 'os,library'
-                severity: 'CRITICAL'
+                severity: 'CRITICAL'  # if severity is critical it will exit and further not processed the pipeline, 
+
+                #note - it will only handle the critical error, and ignore if any warning 
