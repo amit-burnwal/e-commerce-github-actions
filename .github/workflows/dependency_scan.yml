@@ -20,5 +20,23 @@ jobs:
           with:
             python-version: ${{ matrix.python-versions }}
         
-        - name: Dependency Scan for Pip
+        - name: Dependency Scan for Pip    # this is used for only python project
           uses: pypa/gh-action-pip-audit@v1.1.0
+
+         - name: Depcheck                # this is OWASP used for any project(may in python or java or node)
+          uses: dependency-check/Dependency-Check_Action@main
+          id: Depcheck
+          with:
+            project: 'test'
+            path: '.'
+            format: 'HTML'
+            out: 'reports' # this is the default, no need to specify unless you wish to override it
+            args: >
+                --failOnCVSS 7
+                --enableRetired
+                
+        - name: Upload Test results
+          uses: actions/upload-artifact@master
+          with:
+            name: Depcheck report
+            path: ${{github.workspace}}/reports
