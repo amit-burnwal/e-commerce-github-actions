@@ -12,5 +12,5 @@ def test_home_returns_200():
     response -> localhost:8085/ and this should return 200 status code if application is running 
     fine 
     
-    FOr this need to install pytest -> requirement.txt
+    For this need to install pytest -> requirement.txt
     """

@@ -7,7 +7,7 @@ on:
 jobs:
    # code lint - to call code lint workflow 
    code_lint:
-      uses: ./.github/workflows/lint_and_test.yml   # uses only used for do action but also used to call the workflow
+      uses: ./.github/workflows/lint_and_test.yml   # "uses" this is used for multi purpose such as do actions, or call workflows etc
       
    # to build and push using docker
    build-and-push:

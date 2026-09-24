@@ -12,7 +12,7 @@ jobs:
           matrix:
             python-versions: ['3.12','3.13','3.14']
 
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-latest   # github hosted, this is dedicated server used to run the specific job
         steps:
             - name: Code Checkout
               uses: actions/checkout@v7

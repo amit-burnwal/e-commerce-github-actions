@@ -4,8 +4,8 @@
 name: Hello
 
 # when the workflow runs
-on:
-  # push:
+on:  
+  # push:            # it shows workflows start when we push any changes on github
   #   paths-ignore:
   #     - 'README.md'
   workflow_dispatch:
@@ -13,20 +13,20 @@ on:
 # what the workflow does
 jobs:
   # name of your Jobs
-  greet:
+  greet:     #jobs 1
     # where the job runs (OS)
     runs-on: ubuntu-latest
     # the sequence of steps the job does
     steps:
       - name: Say hello
-        run: echo "Hello Dosto"
+        run: echo "Hello friends"
 
       - name: welcome
-        run: echo "Welcome Dosto"
+        run: echo "Welcome friends"
 
-  repo-name:
+  repo-name:    #jobs 2 
     needs: greet
     runs-on: ubuntu-latest
     steps:
       - name: Show Repository Name
-        run: echo "The Repo Name is ${{ github.event.repository.name }}"
+        run: echo "The Repo Name is ${{ github.event.repository.name }}"  # inbuilt 
